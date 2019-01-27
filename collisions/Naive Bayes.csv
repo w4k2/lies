@@ -23,6 +23,9 @@ n_db,cv_method,measure,p,r,dbs
 3,k2x5,t,0.1,7,balance:heart:wine
 3,k2x5,t,0.1,8,balance:heart:wine
 3,k2x5,t,0.1,9,balance:heart:wine
+3,k2x5,t,0.01,1,balance:heart:wine
+3,k2x5,t,0.01,5,balance:heart:wine
+3,k2x5,t,0.01,6,balance:heart:wine
 3,k10,w,0.05,1,balance:heart:wine
 3,k10,w,0.05,4,balance:heart:wine
 3,k20,w,0.05,1,ionosphere:heart:wine
@@ -37,3 +40,6 @@ n_db,cv_method,measure,p,r,dbs
 3,k2x5,w,0.1,5,balance:heart:wine
 3,k2x5,w,0.1,7,balance:heart:wine
 3,k2x5,w,0.1,9,balance:heart:wine
+3,k2x5,w,0.01,1,balance:heart:wine
+3,k2x5,w,0.01,3,balance:heart:wine
+3,k2x5,w,0.01,6,balance:heart:wine

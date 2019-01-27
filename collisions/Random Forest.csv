@@ -13,6 +13,8 @@ n_db,cv_method,measure,p,r,dbs
 4,k20,t,0.1,5,ionosphere:liver:hayes:wine
 4,k2x5,t,0.1,2,breastcan:wisconsin:ionosphere:hayes
 4,k2x5,t,0.1,6,breastcan:ionosphere:liver:wine
+4,k10,t,0.01,1,ionosphere:liver:hayes:wine
+4,k2x5,t,0.01,2,breastcan:wisconsin:ionosphere:hayes
 4,k10,w,0.05,1,wisconsin:ionosphere:liver:hayes
 4,k10,w,0.05,7,breastcan:ionosphere:liver:hayes
 4,k10,w,0.05,8,ionosphere:sonar:liver:hayes
@@ -40,6 +42,7 @@ n_db,cv_method,measure,p,r,dbs
 3,k20,t,0.1,9,breastcan:ionosphere:hayes
 3,k2x5,t,0.1,1,breastcan:wisconsin:ionosphere
 3,k2x5,t,0.1,5,breastcan:wisconsin:ionosphere
+3,k10,t,0.01,7,ionosphere:liver:hayes
 3,k10,w,0.05,4,wisconsin:ionosphere:hayes
 3,k10,w,0.05,6,breastcan:ionosphere:hayes
 3,k20,w,0.05,3,breastcan:ionosphere:liver
@@ -56,3 +59,7 @@ n_db,cv_method,measure,p,r,dbs
 3,k2x5,w,0.1,1,breastcan:wisconsin:ionosphere
 3,k2x5,w,0.1,3,breastcan:ionosphere:wine
 3,k2x5,w,0.1,6,ionosphere:liver:wine
+3,k10,w,0.01,0,ionosphere:liver:hayes
+3,k10,w,0.01,7,ionosphere:liver:hayes
+3,k20,w,0.01,1,ionosphere:liver:wine
+3,k2x5,w,0.01,2,wisconsin:ionosphere:hayes

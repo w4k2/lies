@@ -1,5 +1,6 @@
 n_db,cv_method,measure,p,r,dbs
 5,k10,t,0.1,9,balance:heart:liver:german:wine
+5,k20,t,0.01,2,balance:heart:liver:german:wine
 5,k10,w,0.05,1,breastcan:wisconsin:heart:liver:german
 5,k20,w,0.1,2,balance:heart:liver:german:yeast3
 4,k10,t,0.05,1,balance:heart:liver:german
@@ -17,6 +18,7 @@ n_db,cv_method,measure,p,r,dbs
 4,k2x5,t,0.1,5,balance:heart:liver:german
 4,k2x5,t,0.1,7,balance:heart:liver:german
 4,k2x5,t,0.1,8,balance:heart:liver:german
+4,k10,t,0.01,3,balance:heart:liver:german
 4,k10,w,0.05,2,balance:heart:liver:german
 4,k10,w,0.05,4,heart:liver:german:wine
 4,k10,w,0.05,7,breastcan:balance:heart:german
@@ -29,6 +31,9 @@ n_db,cv_method,measure,p,r,dbs
 4,k20,w,0.1,3,balance:heart:german:yeast3
 4,k2x5,w,0.1,5,breastcan:balance:heart:german
 4,k2x5,w,0.1,8,balance:heart:liver:german
+4,k10,w,0.01,2,balance:liver:german:wine
+4,k10,w,0.01,9,wisconsin:balance:liver:german
+4,k2x5,w,0.01,1,liver:german:wine:yeast3
 3,k10,t,0.05,4,heart:liver:german
 3,k10,t,0.05,7,balance:heart:german
 3,k10,t,0.05,9,liver:german:wine
@@ -44,6 +49,17 @@ n_db,cv_method,measure,p,r,dbs
 3,k2x5,t,0.1,3,balance:liver:german
 3,k2x5,t,0.1,6,balance:liver:german
 3,k2x5,t,0.1,9,heart:liver:german
+3,k10,t,0.01,0,liver:german:yeast3
+3,k10,t,0.01,1,balance:liver:german
+3,k10,t,0.01,2,liver:german:wine
+3,k10,t,0.01,4,heart:liver:german
+3,k10,t,0.01,6,balance:german:yeast3
+3,k10,t,0.01,9,balance:liver:german
+3,k20,t,0.01,7,heart:liver:german
+3,k2x5,t,0.01,1,balance:liver:german
+3,k2x5,t,0.01,3,balance:liver:german
+3,k2x5,t,0.01,4,balance:liver:german
+3,k2x5,t,0.01,8,balance:liver:german
 3,k10,w,0.05,8,wisconsin:heart:german
 3,k10,w,0.05,9,liver:german:wine
 3,k20,w,0.05,0,german:wine:yeast3
@@ -64,3 +80,8 @@ n_db,cv_method,measure,p,r,dbs
 3,k2x5,w,0.1,6,balance:liver:german
 3,k2x5,w,0.1,7,balance:liver:german
 3,k2x5,w,0.1,9,heart:liver:german
+3,k20,w,0.01,2,heart:liver:german
+3,k20,w,0.01,3,heart:liver:german
+3,k20,w,0.01,6,balance:heart:german
+3,k2x5,w,0.01,2,heart:liver:german
+3,k2x5,w,0.01,3,heart:liver:german

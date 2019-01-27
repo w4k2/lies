@@ -12,7 +12,7 @@ np.set_printoptions(precision=3, suppress=True)
 
 clfs = h.classifiers().keys()
 
-tests = {"w": "Wilcoxon"}
+tests = {"w": "Wilcoxon", "t": "T-student"}
 for cid, clf in enumerate(clfs):
     print(clf)
     colors = ["#BBDEFB", "#90CAF9", "#64B5F6", "#42A5F5", "#2196F3", "#1E88E5"]

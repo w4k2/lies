@@ -1,18 +1,18 @@
 ---
 Nearest Neighbors [0]
-0 collisions found
+3 collisions found
 ---
 RBF SVM [1]
-58 collisions found
+179 collisions found
 ---
 Decision Tree [2]
 0 collisions found
 ---
 Random Forest [3]
-31 collisions found
+64 collisions found
 ---
 Naive Bayes [4]
-1 collisions found
+44 collisions found
 ---
 Linear SVM [5]
-17 collisions found
+86 collisions found

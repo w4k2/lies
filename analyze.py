@@ -4,6 +4,8 @@ import numpy as np
 import pandas as pd
 import csv, scipy, json
 import warnings
+from tqdm import tqdm
+
 warnings.filterwarnings("ignore")
 
 np.set_printoptions(precision=3, suppress=True)
@@ -18,7 +20,7 @@ p_s = h.p_s()
 # Iterating results
 for p in p_s:
     print(p)
-    for result in results:
+    for result in tqdm(results, ascii=True):
         # Get params for results
         dbname = result[2]
         repetition = int(result[3][1:])
@@ -27,7 +29,7 @@ for p in p_s:
         df = pd.read_csv(filename)
 
         # Showoff
-        #print "Repetition %i with %s on %s (p=%.2f)" % (repetition, cv_method, dbname,1-p)
+        # print "Repetition %i with %s on %s (p=%.2f)" % (repetition, cv_method, dbname,1-p)
 
         # Calculate mean scores and std_s
         mean_scores = df.mean(axis=0).values
@@ -40,9 +42,9 @@ for p in p_s:
         # Going through classifiers
         for i, clf_a in enumerate(clfs):
             clf_acc = mean_scores[i]
-            #print "\n---\n%s - ACC = %.3f" % (clf_a, clf_acc)
+            # print "\n---\n%s - ACC = %.3f" % (clf_a, clf_acc)
             leading = np.delete(mean_scores < clf_acc, i)
-            #print leading
+            # print leading
 
             acc_vector_leader = df[clf_a].values
 
@@ -52,8 +54,8 @@ for p in p_s:
                     continue
                 acc_vector_b = df[clf_b].values
 
-                _, p_w = scipy.stats.wilcoxon(acc_vector_leader,acc_vector_b)
-                _, p_t = scipy.stats.ttest_ind(acc_vector_leader,acc_vector_b)
+                _, p_w = scipy.stats.wilcoxon(acc_vector_leader, acc_vector_b)
+                _, p_t = scipy.stats.ttest_ind(acc_vector_leader, acc_vector_b)
                 p_ws.append(p_w)
                 p_ts.append(p_t)
             p_ws = np.array(p_ws)
@@ -92,9 +94,14 @@ for p in p_s:
             "mean": list(mean_scores),
             "std": list(std_scores),
             "adv_w": adv_w,
-            "adv_t": adv_t
+            "adv_t": adv_t,
         }
-        jsonname = "jsons/%s_r%i_%s_p%i.json" % (dbname, repetition, cv_method, int(p*100))
-        #print jsonname
-        with open(jsonname, 'w') as outfile:
+        jsonname = "jsons/%s_r%i_%s_p%i.json" % (
+            dbname,
+            repetition,
+            cv_method,
+            int(p * 100),
+        )
+        # print jsonname
+        with open(jsonname, "w") as outfile:
             json.dump(data, outfile, indent=2, sort_keys=True)

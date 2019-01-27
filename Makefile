@@ -1,4 +1,5 @@
 all:
+	python analyze.py
 	python seek.py > log.txt
 	python plot_collisions.py
 

@@ -63,4 +63,4 @@ def ks():
 
 
 def p_s():
-    return [0.05]
+    return [0.05, 0.1, 0.01]

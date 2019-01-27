@@ -14,40 +14,41 @@ repetitions = 10
 datasets = h.datasets()
 clfs = h.classifiers().keys()
 results = h.results()
-measure = "w"
+measures = ["t", "w"]
 cv_methods = ["k10", "k20", "k2x5"]
 p_s = h.p_s()
 
 for i, clf in enumerate(clfs):
     collisions = []
     print("---\n%s [%i]" % (clf, i))
-    for p in p_s:
-        for cv_method in cv_methods:
-            for r in range(repetitions):
-                db_count = 0
-                dbs = []
-                for dataset in datasets:
-                    dbname = dataset[1]
-                    filename = "jsons/%s_r%i_%s_p%i.json" % (
-                        dbname,
-                        r,
-                        cv_method,
-                        int(p * 100),
-                    )
-                    data = json.load(open(filename))
-                    scores = data["mean"]
-                    advs = data["adv_%s" % measure]
-                    score_leader = np.argmax(scores)
-                    measure_leaders = np.argwhere(advs == np.max(advs))
+    for measure in measures:
+        for p in p_s:
+            for cv_method in cv_methods:
+                for r in range(repetitions):
+                    db_count = 0
+                    dbs = []
+                    for dataset in datasets:
+                        dbname = dataset[1]
+                        filename = "jsons/%s_r%i_%s_p%i.json" % (
+                            dbname,
+                            r,
+                            cv_method,
+                            int(p * 100),
+                        )
+                        data = json.load(open(filename))
+                        scores = data["mean"]
+                        advs = data["adv_%s" % measure]
+                        score_leader = np.argmax(scores)
+                        measure_leaders = np.argwhere(advs == np.max(advs))
 
-                    # Warunek uznania
-                    is_leader = i in measure_leaders and len(measure_leaders) < 3
-                    if is_leader:
-                        dbs.append(dbname)
+                        # Warunek uznania
+                        is_leader = i in measure_leaders and len(measure_leaders) < 3
+                        if is_leader:
+                            dbs.append(dbname)
 
-                if len(dbs) > 2:
-                    record = [len(dbs), cv_method, measure, p, r, ":".join(dbs)]
-                    collisions.append(record)
+                    if len(dbs) > 2:
+                        record = [len(dbs), cv_method, measure, p, r, ":".join(dbs)]
+                        collisions.append(record)
     print("%i collisions found" % len(collisions))
 
     collisions = sorted(collisions, key=lambda l: l[0], reverse=True)

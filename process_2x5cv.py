@@ -13,14 +13,14 @@ repetitions = 10
 datasets = h.datasets()
 clfs = h.classifiers()
 
-for i, dataset in enumerate(datasets):
-    print(i, dataset)
+for i, dataset in tqdm(enumerate(datasets)):
+    # print(i, dataset)
     # Gather dataset
     ds = pd.read_csv(dataset[0], header=None).values
     X, y = ds[:, :-1], ds[:, -1].astype("int")
 
     # CV
-    for repetition in range(repetitions):
+    for repetition in tqdm(range(repetitions)):
         cv = model_selection.RepeatedStratifiedKFold(
             n_splits=2, n_repeats=5, random_state=np.random.randint(9999)
         )
@@ -42,7 +42,7 @@ for i, dataset in enumerate(datasets):
 
             fold += 1
         filename = "results/%s_r%i_k2x5.csv" % (dataset[1], repetition)
-        print(filename)
+        # print(filename)
         k_accuracies = np.array(k_accuracies)
         with open(filename, "w") as csvfile:
             spamwriter = csv.writer(csvfile)

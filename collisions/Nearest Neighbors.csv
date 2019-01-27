@@ -1,2 +1,4 @@
 n_db,cv_method,measure,p,r,dbs
-3,k2x5,w,0.05,9,breastcan:wisconsin:sonar
+3,k10,w,0.05,6,breastcan:wisconsin:sonar
+3,k10,w,0.1,2,breastcan:sonar:iris
+3,k10,w,0.1,6,breastcan:sonar:iris

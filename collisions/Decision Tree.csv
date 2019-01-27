@@ -1,0 +1,6 @@
+n_db,cv_method,measure,p,r,dbs
+4,k10,w,0.05,0,liver:diabetes:yeast3:monkthree
+3,k10,w,0.05,2,ionosphere:german:monkthree
+3,k10,w,0.05,5,ionosphere:german:monkthree
+3,k20,w,0.05,7,ionosphere:liver:monkthree
+3,k20,w,0.05,9,liver:diabetes:monkthree
